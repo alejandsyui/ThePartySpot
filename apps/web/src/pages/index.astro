@@ -1,0 +1,393 @@
+---
+import "../styles/global.css";
+import SpotlightShowcase from "../components/SpotlightShowcase.svelte";
+import BookingBuilder from "../components/BookingBuilder.svelte";
+
+const decorSlides = [
+	{
+		id: "decor-dora",
+		title: "Dora Explorer Adventure",
+		description: "Jungle vines, explorer props, and a confetti finale for curious kids.",
+		imageUrl: "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Jungle-themed children party setup with balloons",
+		badge: "Decor Spotlight",
+		action: { type: "decor", id: "dora-adventure", focusStep: "decor", selectId: "dora-adventure" }
+	},
+	{
+		id: "decor-paw",
+		title: "Paw Patrol Rescue HQ",
+		description: "Lookout tower backdrop, siren lighting, and mission scavenger hunt.",
+		imageUrl: "https://images.unsplash.com/photo-1528712306091-ed0763094c98?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Colorful kids party with hero mascots",
+		badge: "Decor Spotlight",
+		action: { type: "decor", id: "paw-patrol-rescue", focusStep: "decor", selectId: "paw-patrol-rescue" }
+	},
+	{
+		id: "decor-neon",
+		title: "Neon Nightlife",
+		description: "LED tunnel entrance, blacklight lounge, and glow-in-the-dark barware.",
+		imageUrl: "https://images.unsplash.com/photo-1464375117522-1311d6a5b81a?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Club dance floor lit with neon lights",
+		badge: "Decor Spotlight",
+		action: { type: "decor", id: "neon-nightlife", focusStep: "decor", selectId: "neon-nightlife" }
+	}
+];
+
+const addonSlides = [
+	{
+		id: "addon-security",
+		title: "Elite Security Detail",
+		description: "Licensed guards manage guest flow and VIP escort so you can relax.",
+		imageUrl: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Professional security guard standing at venue entrance",
+		badge: "Premium Add-on",
+		action: { type: "addon", id: "vip-security", focusStep: "addons", selectId: "vip-security" }
+	},
+	{
+		id: "addon-minibar",
+		title: "Craft Minibar",
+		description: "Signature cocktails, zero-proof menu, and LED-lit bar presentation.",
+		imageUrl: "https://images.unsplash.com/photo-1514361892635-6e122620e4c1?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Bartender serving cocktails at illuminated bar",
+		badge: "Premium Add-on",
+		action: { type: "addon", id: "craft-minibar", focusStep: "addons", selectId: "craft-minibar" }
+	},
+	{
+		id: "addon-photo",
+		title: "360° Photo Booth",
+		description: "Slow-motion captures, social-ready edits, and on-site hype host.",
+		imageUrl: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Friends posing in a photo booth",
+		badge: "Premium Add-on",
+		action: { type: "addon", id: "photo-booth", focusStep: "addons", selectId: "photo-booth" }
+	}
+];
+
+const experienceSlides = [
+	{
+		id: "experience-kids",
+		title: "Kids Birthday Magic",
+		description: "Party coach, themed games, and balloon garlands for epic memories.",
+		imageUrl: "https://images.unsplash.com/photo-1600959907703-125ba1374a12?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Children celebrating birthday with confetti",
+		badge: "Experience",
+		action: { type: "experience", id: "kids-birthday", focusStep: "schedule", selectId: "kids-birthday" }
+	},
+	{
+		id: "experience-corp",
+		title: "Corporate Lounge",
+		description: "Lounge vignettes, stage & AV, concierge for brand activations.",
+		imageUrl: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "Modern corporate event setup",
+		badge: "Experience",
+		action: { type: "experience", id: "corporate-lounge", focusStep: "schedule", selectId: "corporate-lounge" }
+	},
+	{
+		id: "experience-glow",
+		title: "Neon Glow Night",
+		description: "DJ booth, synchronized lighting, and UV confetti drop finale.",
+		imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
+		imageAlt: "DJ performing on stage with LED lights",
+		badge: "Experience",
+		action: { type: "experience", id: "neon-glow", focusStep: "schedule", selectId: "neon-glow" }
+	}
+];
+
+const heroStats = [
+	{ label: "Events Hosted", value: "1,200+" },
+	{ label: "Average Rating", value: "4.9/5" },
+	{ label: "Add-ons Available", value: "35" }
+];
+
+const featureCards = [
+	{
+		title: "Seamless Bookings",
+		description:
+			"Guests pick a time, pay their deposit, and receive automated reminders so you never juggle spreadsheets again.",
+		icon: "🗓️"
+	},
+	{
+		title: "Real-time Control",
+		description:
+			"Drag-and-drop calendar, instant content edits, and pricing tweaks sync across the website and desktop app.",
+		icon: "⚡"
+	},
+	{
+		title: "Revenue Intelligence",
+		description:
+			"Daily profit snapshots, add-on performance, and payout history keep your brother in command of the business.",
+		icon: "📈"
+	}
+];
+
+const spotlight = [
+	{
+		title: "Kids Birthday Magic",
+		blurb: "Balloon garlands, photo booths, and themed decor delivered turnkey.",
+		color: "from-brand-pink/80 to-purple-600/60"
+	},
+	{
+		title: "Corporate Happy Hour",
+		blurb: "Polished lighting, lounge seating, and AV support for mixers and workshops.",
+		color: "from-brand-teal/80 to-emerald-500/60"
+	},
+	{
+		title: "Neon Glow Nights",
+		blurb: "LED walls, DJ booth, and synchronized lighting ready for the after-dark crowd.",
+		color: "from-indigo-500/80 to-brand-pink/70"
+	}
+];
+
+const bookingSteps = [
+	"Pick availability and guest count",
+	"Build décor, add-ons, and experiences",
+	"Preview pricing instantly",
+	"Create account at checkout and pay deposit"
+];
+
+const currentYear = new Date().getFullYear();
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>The Party Spot · Celebrate Without Limits</title>
+	</head>
+	<body class="min-h-screen bg-slate-950">
+		<BookingBuilder client:load showButton={false} />
+		<header class="relative z-20 border-b border-white/5 bg-slate-950/80 backdrop-blur">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
+				<div class="flex items-center gap-3 text-white">
+					<span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-pink/20 text-xl">🎉</span>
+					<div>
+						<p class="text-base font-semibold">The Party Spot</p>
+						<p class="text-xs uppercase tracking-[0.4em] text-brand-teal/70">Celebrate without limits</p>
+					</div>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+					<a class="transition hover:text-white" href="#hero">Spotlights</a>
+					<a class="transition hover:text-white" href="#control-center">Admin Center</a>
+					<a class="transition hover:text-white" href="#booking">Booking Flow</a>
+				</nav>
+				<div class="flex flex-wrap items-center gap-3">
+					<button
+						class="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white hover:text-white"
+						type="button"
+						data-booking-trigger
+						data-booking-focus="schedule"
+					>
+						Check availability
+					</button>
+					<button
+						class="inline-flex items-center gap-2 rounded-full bg-brand-pink px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-pink/30 transition hover:bg-brand-pink/90"
+						type="button"
+						data-booking-trigger
+					>
+						Plan your event
+					</button>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section id="hero" class="relative overflow-hidden border-b border-white/5">
+				<div class="absolute inset-0 bg-gradient-to-br from-brand-pink/30 via-brand-teal/20 to-transparent blur-3xl"></div>
+				<div class="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-16 pt-16 sm:px-10">
+					<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+						<div class="max-w-2xl space-y-4">
+							<span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-brand-teal">
+								First, choose your vibe
+							</span>
+							<h1 class="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+								Spotlight packages that build themselves as soon as you land.
+							</h1>
+							<p class="text-lg text-slate-300">
+								Tap a tile to explore décor, staffing, and immersive experiences. Each one can flow straight into the booking builder with live pricing.
+							</p>
+						</div>
+						<div class="grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
+							{heroStats.map((stat) => (
+								<div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-center" key={stat.label}>
+									<p class="text-xs uppercase tracking-wide text-brand-teal/80">{stat.label}</p>
+									<p class="mt-2 text-2xl font-semibold text-white">{stat.value}</p>
+								</div>
+							))}
+						</div>
+					</div>
+					<div class="grid gap-6 lg:grid-cols-3">
+						<SpotlightShowcase
+							client:load
+							title="Decor transformations"
+							subtitle="Theme-forward storylines"
+							slides={decorSlides}
+							ctaLabel="Build this décor"
+							triggerEventName="booking:open"
+						/>
+						<SpotlightShowcase
+							client:load
+							title="Premium extras"
+							subtitle="Staffing & services"
+							slides={addonSlides}
+							ctaLabel="Add to my night"
+							accent="from-brand-teal/80 to-emerald-500/50"
+							triggerEventName="booking:open"
+						/>
+						<SpotlightShowcase
+							client:load
+							title="Immersive experiences"
+							subtitle="Curated presets"
+							slides={experienceSlides}
+							ctaLabel="See this in the builder"
+							accent="from-indigo-500/80 to-brand-pink/70"
+							triggerEventName="booking:open"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section id="control-center" class="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+				<div class="max-w-3xl">
+					<h2 class="section-title">Admin Control Center powers every switch.</h2>
+					<p class="section-subtitle mt-4">
+						Give the business owner a Windows app that syncs instantly with the website. Update pricing, launch new add-ons, edit page content, and reconcile payouts in minutes—not months.
+					</p>
+				</div>
+				<div class="mt-12 grid gap-6 md:grid-cols-3">
+					{featureCards.map((card) => (
+						<div key={card.title} class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+							<div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-teal/20 text-2xl">{card.icon}</div>
+							<h3 class="mt-4 text-xl font-semibold text-white">{card.title}</h3>
+							<p class="mt-2 text-sm leading-relaxed text-slate-300">{card.description}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="border-y border-white/10 bg-white/5 py-20">
+				<div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 sm:px-10 lg:flex-row lg:items-center">
+					<div class="space-y-6 lg:w-1/2">
+						<h2 class="section-title">Spotlight experiences ready to book.</h2>
+						<p class="section-subtitle">
+							Curated presets let staff launch a new event style with a single click. Each spotlight ties into dynamic pricing, add-on bundles, and web content blocks.
+						</p>
+						<ul class="space-y-4">
+							{spotlight.map((item) => (
+								<li
+									key={item.title}
+									class={`rounded-3xl border border-white/5 bg-gradient-to-br ${item.color} p-[1px]`}
+								>
+									<div class="rounded-3xl bg-slate-950/90 p-5">
+										<h3 class="text-lg font-semibold text-white">{item.title}</h3>
+										<p class="mt-2 text-sm text-slate-300">{item.blurb}</p>
+									</div>
+								</li>
+							))}
+						</ul>
+					</div>
+					<div class="grid flex-1 gap-4 sm:grid-cols-2">
+						<div class="flex h-48 flex-col justify-between rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+							<div>
+								<p class="text-sm text-slate-400">Live availability</p>
+								<p class="mt-2 text-xl font-semibold text-white">Saturday · 10 AM – Midnight</p>
+							</div>
+							<p class="text-sm text-slate-300">Tap a slot to open booking drawer with add-ons, buffers, and deposits.</p>
+						</div>
+						<div class="flex h-48 flex-col justify-between rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+							<div>
+								<p class="text-sm text-slate-400">Add-ons attached</p>
+								<p class="mt-2 text-xl font-semibold text-white">Photo booth · Glow bar · Cleanup crew</p>
+							</div>
+							<p class="text-sm text-slate-300">Syncs with website product cards and inventory in real time.</p>
+						</div>
+						<div class="flex h-48 flex-col justify-between rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+							<div>
+								<p class="text-sm text-slate-400">Profit today</p>
+								<p class="mt-2 text-xl font-semibold text-white">$8,420</p>
+							</div>
+							<p class="text-sm text-slate-300">Desktop dashboard aggregates deposits, fees, and remaining balances.</p>
+						</div>
+						<div class="flex h-48 flex-col justify-between rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+							<div>
+								<p class="text-sm text-slate-400">Next actions</p>
+								<p class="mt-2 text-xl font-semibold text-white">Send 24-hour reminder · Approve refund · Publish new add-on</p>
+							</div>
+							<p class="text-sm text-slate-300">Workflow queue keeps staff clear on priorities.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="booking" class="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+				<div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+					<div class="space-y-6">
+						<h2 class="section-title">How guests book in under five minutes.</h2>
+						<ol class="space-y-4 text-slate-200">
+							{bookingSteps.map((step, idx) => (
+								<li
+									key={step}
+									class="rounded-3xl border border-white/10 bg-slate-900/70 p-5"
+								>
+									<strong>{idx + 1}.</strong> {step}
+								</li>
+							))}
+						</ol>
+						<p class="section-subtitle">
+							The desktop admin can override bookings, adjust buffers, or launch new promos without touching code.
+						</p>
+					</div>
+					<div class="rounded-3xl border border-brand-teal/20 bg-gradient-to-br from-brand-teal/10 via-brand-pink/10 to-transparent p-[1px]">
+						<div class="rounded-3xl bg-slate-950/95 p-8 shadow-xl shadow-brand-teal/20">
+							<h3 class="text-xl font-semibold text-white">Ready for development</h3>
+							<p class="mt-3 text-sm text-slate-300">
+								This Astro + Svelte foundation already has Tailwind wired in. Next up, we’ll connect to Supabase, scaffold the admin desktop interface, and wire a live booking calendar.
+							</p>
+							<div class="mt-6 space-y-4 text-sm text-slate-200">
+								<div class="flex items-center gap-3">
+									<span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+									<span>Tailwind configured with custom brand palette.</span>
+								</div>
+								<div class="flex items-center gap-3">
+									<span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+									<span>Homepage sections scaffolded for hero, features, and booking flow.</span>
+								</div>
+								<div class="flex items-center gap-3">
+									<span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+									<span>Placeholder cards highlight upcoming admin controls & analytics.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<footer class="border-t border-white/10 bg-slate-950/80 py-10">
+				<div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+					  <p>© {currentYear} The Party Spot. All rights reserved.</p>
+					<nav class="flex flex-wrap items-center gap-4">
+						<a class="hover:text-white" href="#control-center">Admin Center</a>
+						<a class="hover:text-white" href="#booking">Booking Flow</a>
+						<a class="hover:text-white" href="mailto:hello@thepartyspot.com">Contact</a>
+					</nav>
+				</div>
+			</footer>
+		</main>
+		<script type="module">
+			const EVENT_NAME = "booking:open";
+			if (typeof window !== "undefined") {
+				const triggers = document.querySelectorAll('[data-booking-trigger]');
+				triggers.forEach((trigger) => {
+					trigger.addEventListener("click", () => {
+						const detail = {};
+						const { bookingFocus, bookingSelect } = trigger.dataset;
+						if (bookingFocus) detail.focusStep = bookingFocus;
+						if (bookingSelect) detail.selectId = bookingSelect;
+						window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail }));
+					});
+				});
+			}
+		</script>
+	</body>
+</html>

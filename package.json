@@ -1,0 +1,19 @@
+{
+  "name": "official-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Party Spot official monorepo (web app, API edge functions, shared packages)",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "format": "pnpm -r format"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.17.1"
+}

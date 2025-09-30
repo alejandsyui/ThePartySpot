@@ -1,0 +1,30 @@
+{
+  "name": "web",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint src",
+    "format": "prettier --check src"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^7.2.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/node": "^24.5.2",
+    "astro": "^5.14.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.4.38",
+    "svelte": "^5.39.6",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "@typescript-eslint/parser": "^8.12.1",
+    "prettier": "^3.4.1"
+  }
+}
