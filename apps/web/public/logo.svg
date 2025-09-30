@@ -1,0 +1,20 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="200" height="60" rx="8" fill="url(#brandGradient)"/>
+  
+  <!-- Party icon (simplified balloon) -->
+  <circle cx="25" cy="30" r="8" fill="white" opacity="0.9"/>
+  <path d="M20 30 Q25 20 30 30 Q25 35 20 30 Z" fill="white" opacity="0.9"/>
+  
+  <!-- Text -->
+  <text x="55" y="25" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">The Party Spot</text>
+  <text x="55" y="45" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Celebrate in Style</text>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#4ecdc4"/>
+    </linearGradient>
+  </defs>
+</svg>

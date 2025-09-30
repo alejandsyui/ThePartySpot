@@ -1,0 +1,117 @@
+---
+import "../../styles/global.css";
+
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Terms of Service - The Party Spot</title>
+	</head>
+	<body class="min-h-screen bg-slate-950 text-white">
+		<header class="relative z-20 border-b border-white/5 bg-slate-950/80 backdrop-blur">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
+				<div class="flex items-center gap-3 text-white">
+					<img src="/logo.svg" alt="The Party Spot Logo" class="h-10 w-10 rounded-2xl bg-white/10 p-1" />
+					<div>
+						<p class="text-base font-semibold">The Party Spot</p>
+						<p class="text-xs uppercase tracking-[0.4em] text-brand-teal/70">Celebrate without limits</p>
+					</div>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+					<a class="transition hover:text-white" href="/">Home</a>
+					<a class="transition hover:text-white" href="/#booking">Book Event</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="mx-auto max-w-4xl px-6 py-16 sm:px-10">
+			<div class="prose prose-invert max-w-none">
+				<h1 class="text-4xl font-bold mb-8">Terms of Service</h1>
+				<p class="text-slate-300 mb-8"><em>Last Updated: September 29, 2025</em></p>
+
+				<h2>Acceptance of Terms</h2>
+				<p>By booking an event or using our website, you agree to these Terms of Service. If you do not agree, please do not use our services.</p>
+
+				<h2>Services</h2>
+				<p>The Party Spot provides event planning, venue rental, and party coordination services. We reserve the right to modify or cancel services due to circumstances beyond our control.</p>
+
+				<h2>Booking and Payment</h2>
+				<ul>
+					<li>Bookings are confirmed upon receipt of deposit</li>
+					<li>Full payment is due 14 days before your event</li>
+					<li>Prices are subject to change until booking is confirmed</li>
+					<li>We accept major credit cards and approved payment methods</li>
+				</ul>
+
+				<h2>Venue Rules and Conduct</h2>
+
+				<h3>Guest Conduct</h3>
+				<ul>
+					<li>Maximum guest limits must be observed</li>
+					<li>No outside food or beverages without approval</li>
+					<li>Respect for property and other guests is required</li>
+					<li>Parents/guardians are responsible for minors</li>
+				</ul>
+
+				<h3>Damage and Liability</h3>
+				<ul>
+					<li>You are responsible for any damage caused by you or your guests</li>
+					<li>Security deposits may be applied to cover damages</li>
+					<li>The Party Spot is not liable for lost or stolen personal items</li>
+					<li>We recommend event insurance for valuable items</li>
+				</ul>
+
+				<h2>Age Restrictions</h2>
+				<ul>
+					<li>Events for children under 5 require additional supervision arrangements</li>
+					<li>Alcohol service follows local laws and requires responsible service agreements</li>
+					<li>Age-appropriate activities and supervision are your responsibility</li>
+				</ul>
+
+				<h2>Intellectual Property</h2>
+				<ul>
+					<li>Event photos/videos may be used for our marketing (with permission)</li>
+					<li>Our branding, website content, and materials are protected</li>
+					<li>You retain rights to your personal content and materials</li>
+				</ul>
+
+				<h2>Limitation of Liability</h2>
+				<p>The Party Spot's liability is limited to the amount paid for services. We are not responsible for indirect damages or circumstances beyond our reasonable control.</p>
+
+				<h2>Governing Law</h2>
+				<p>These terms are governed by New Jersey law. Any disputes will be resolved in Mercer County courts.</p>
+
+				<h2>Changes to Terms</h2>
+				<p>We may update these terms with reasonable notice. Continued use constitutes acceptance.</p>
+
+				<h2>Contact Information</h2>
+				<div class="bg-slate-900/50 p-6 rounded-2xl border border-white/10">
+					<p class="font-semibold">The Party Spot</p>
+					<p>340 Hamilton Ave, Trenton, NJ 08611</p>
+					<p>Phone: <a href="tel:(609) 789-8422" class="text-brand-teal hover:text-brand-pink">(609) 789-8422</a></p>
+				</div>
+
+				<p class="text-slate-300 italic mt-8"><em>Thank you for choosing The Party Spot for your special events!</em></p>
+			</div>
+		</main>
+
+		<footer class="border-t border-white/10 bg-slate-950/80 py-10 mt-16">
+			<div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+				<div>
+					<p>© {currentYear} The Party Spot. All rights reserved.</p>
+					<p class="mt-1">340 Hamilton Ave, Trenton, NJ 08611</p>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4">
+					<a class="hover:text-white" href="/">Home</a>
+					<a class="hover:text-white" href="/policies/cancellation">Cancellation Policy</a>
+					<a class="hover:text-white" href="/policies/privacy">Privacy Policy</a>
+				</nav>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -94,9 +94,9 @@ const experienceSlides = [
 ];
 
 const heroStats = [
-	{ label: "Events Hosted", value: "1,200+" },
-	{ label: "Average Rating", value: "4.9/5" },
-	{ label: "Add-ons Available", value: "35" }
+	{ label: "Events Hosted", value: "0" },
+	{ label: "Average Rating", value: "5.0/5" },
+	{ label: "Add-ons Available", value: "0" }
 ];
 
 const featureCards = [
@@ -162,7 +162,7 @@ const currentYear = new Date().getFullYear();
 		<header class="relative z-20 border-b border-white/5 bg-slate-950/80 backdrop-blur">
 			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
 				<div class="flex items-center gap-3 text-white">
-					<span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-pink/20 text-xl">🎉</span>
+					<img src="/logo.svg" alt="The Party Spot Logo" class="h-10 w-10 rounded-2xl bg-white/10 p-1" />
 					<div>
 						<p class="text-base font-semibold">The Party Spot</p>
 						<p class="text-xs uppercase tracking-[0.4em] text-brand-teal/70">Celebrate without limits</p>
@@ -201,11 +201,11 @@ const currentYear = new Date().getFullYear();
 							<span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-brand-teal">
 								First, choose your vibe
 							</span>
-							<h1 class="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-								Spotlight packages that build themselves as soon as you land.
+							<h1 class="text-4xl font-heading font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-brand-teal to-white drop-shadow-[0_1px_1px_rgba(15,23,42,0.35)] sm:text-5xl">
+								Unforgettable Party Experiences
 							</h1>
 							<p class="text-lg text-slate-300">
-								Tap a tile to explore décor, staffing, and immersive experiences. Each one can flow straight into the booking builder with live pricing.
+								Transform your celebrations into extraordinary memories with our premium party planning and event management services in Trenton, NJ.
 							</p>
 						</div>
 						<div class="grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
@@ -365,11 +365,17 @@ const currentYear = new Date().getFullYear();
 
 			<footer class="border-t border-white/10 bg-slate-950/80 py-10">
 				<div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-					  <p>© {currentYear} The Party Spot. All rights reserved.</p>
+					  <div>
+					  	<p>© {currentYear} The Party Spot. All rights reserved.</p>
+					  	<p class="mt-1">340 Hamilton Ave, Trenton, NJ 08611</p>
+					  </div>
 					<nav class="flex flex-wrap items-center gap-4">
 						<a class="hover:text-white" href="#control-center">Admin Center</a>
 						<a class="hover:text-white" href="#booking">Booking Flow</a>
-						<a class="hover:text-white" href="mailto:hello@thepartyspot.com">Contact</a>
+						<a class="hover:text-white" href="tel:(609) 789-8422">Call (609) 789-8422</a>
+						<a class="hover:text-white" href="/policies/cancellation">Cancellation Policy</a>
+						<a class="hover:text-white" href="/policies/privacy">Privacy Policy</a>
+						<a class="hover:text-white" href="/policies/terms">Terms of Service</a>
 					</nav>
 				</div>
 			</footer>

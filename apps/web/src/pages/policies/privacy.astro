@@ -1,0 +1,104 @@
+---
+import "../../styles/global.css";
+
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Privacy Policy - The Party Spot</title>
+	</head>
+	<body class="min-h-screen bg-slate-950 text-white">
+		<header class="relative z-20 border-b border-white/5 bg-slate-950/80 backdrop-blur">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
+				<div class="flex items-center gap-3 text-white">
+					<img src="/logo.svg" alt="The Party Spot Logo" class="h-10 w-10 rounded-2xl bg-white/10 p-1" />
+					<div>
+						<p class="text-base font-semibold">The Party Spot</p>
+						<p class="text-xs uppercase tracking-[0.4em] text-brand-teal/70">Celebrate without limits</p>
+					</div>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+					<a class="transition hover:text-white" href="/">Home</a>
+					<a class="transition hover:text-white" href="/#booking">Book Event</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="mx-auto max-w-4xl px-6 py-16 sm:px-10">
+			<div class="prose prose-invert max-w-none">
+				<h1 class="text-4xl font-bold mb-8">Privacy Policy</h1>
+				<p class="text-slate-300 mb-8"><em>Last Updated: September 29, 2025</em></p>
+
+				<h2>Information We Collect</h2>
+
+				<h3>Personal Information</h3>
+				<ul>
+					<li>Name, phone number, and email address</li>
+					<li>Event details (date, time, guest count, package selections)</li>
+					<li>Payment information (processed securely through our payment partners)</li>
+					<li>Photos and videos from events (with your permission)</li>
+				</ul>
+
+				<h3>How We Use Your Information</h3>
+				<ul>
+					<li>To process your booking and provide event services</li>
+					<li>To communicate about your event (confirmations, reminders, updates)</li>
+					<li>To improve our services and customer experience</li>
+					<li>To send occasional promotional offers (with your consent)</li>
+				</ul>
+
+				<h2>Information Sharing</h2>
+				<p>We do not sell, trade, or rent your personal information to third parties. We may share information only in these circumstances:</p>
+				<ul>
+					<li>With service providers who help us deliver your event (caterers, photographers, etc.)</li>
+					<li>When required by law or to protect our rights</li>
+					<li>With your explicit consent</li>
+				</ul>
+
+				<h2>Data Security</h2>
+				<ul>
+					<li>All payment information is processed through secure, PCI-compliant partners</li>
+					<li>Your personal information is stored in encrypted databases</li>
+					<li>We use industry-standard security measures to protect your data</li>
+				</ul>
+
+				<h2>Your Rights</h2>
+				<ul>
+					<li>You can request to see, update, or delete your personal information</li>
+					<li>You can opt out of promotional communications at any time</li>
+					<li>You can request data portability</li>
+				</ul>
+
+				<h2>Cookies and Tracking</h2>
+				<p>Our website uses cookies to improve your browsing experience and analyze website traffic. You can control cookie settings in your browser.</p>
+
+				<h2>Children's Privacy</h2>
+				<p>We do not knowingly collect personal information from children under 13 without parental consent.</p>
+
+				<h2>Contact Us</h2>
+				<p>For privacy questions or to exercise your rights, contact us at <a href="tel:(609) 789-8422" class="text-brand-teal hover:text-brand-pink">(609) 789-8422</a> or email us.</p>
+
+				<p class="text-slate-300 italic mt-8"><em>We are committed to protecting your privacy and maintaining the trust you place in us.</em></p>
+			</div>
+		</main>
+
+		<footer class="border-t border-white/10 bg-slate-950/80 py-10 mt-16">
+			<div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+				<div>
+					<p>© {currentYear} The Party Spot. All rights reserved.</p>
+					<p class="mt-1">340 Hamilton Ave, Trenton, NJ 08611</p>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4">
+					<a class="hover:text-white" href="/">Home</a>
+					<a class="hover:text-white" href="/policies/cancellation">Cancellation Policy</a>
+					<a class="hover:text-white" href="/policies/terms">Terms of Service</a>
+				</nav>
+			</div>
+		</footer>
+	</body>
+</html>

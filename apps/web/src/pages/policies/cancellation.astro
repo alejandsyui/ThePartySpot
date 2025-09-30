@@ -1,0 +1,93 @@
+---
+import "../../styles/global.css";
+
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Cancellation Policy - The Party Spot</title>
+	</head>
+	<body class="min-h-screen bg-slate-950 text-white">
+		<header class="relative z-20 border-b border-white/5 bg-slate-950/80 backdrop-blur">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-10">
+				<div class="flex items-center gap-3 text-white">
+					<img src="/logo.svg" alt="The Party Spot Logo" class="h-10 w-10 rounded-2xl bg-white/10 p-1" />
+					<div>
+						<p class="text-base font-semibold">The Party Spot</p>
+						<p class="text-xs uppercase tracking-[0.4em] text-brand-teal/70">Celebrate without limits</p>
+					</div>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+					<a class="transition hover:text-white" href="/">Home</a>
+					<a class="transition hover:text-white" href="/#booking">Book Event</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="mx-auto max-w-4xl px-6 py-16 sm:px-10">
+			<div class="prose prose-invert max-w-none">
+				<h1 class="text-4xl font-bold mb-8">Cancellation Policy</h1>
+				<p class="text-slate-300 mb-8"><em>Last Updated: September 29, 2025</em></p>
+
+				<h2>Booking Deposits</h2>
+				<ul>
+					<li>All event bookings require a non-refundable deposit of 50% of the total event cost</li>
+					<li>Deposits are due within 7 days of booking confirmation to secure your date</li>
+					<li>Deposits are applied toward your final event balance</li>
+				</ul>
+
+				<h2>Cancellation Timeline</h2>
+				<ul>
+					<li><strong>More than 60 days before event:</strong> Full deposit refund (minus $100 processing fee)</li>
+					<li><strong>30-60 days before event:</strong> 50% deposit refund</li>
+					<li><strong>14-30 days before event:</strong> 25% deposit refund</li>
+					<li><strong>Less than 14 days before event:</strong> No refund on deposit</li>
+				</ul>
+
+				<h2>Event Modifications</h2>
+				<ul>
+					<li>Date changes are allowed up to 30 days before your event (subject to availability)</li>
+					<li>A $200 change fee applies to date modifications</li>
+					<li>Package upgrades are welcome and will be added to your final balance</li>
+				</ul>
+
+				<h2>Weather-Related Cancellations</h2>
+				<ul>
+					<li>In case of severe weather, we will work with you to reschedule your event</li>
+					<li>Indoor alternatives will be provided when possible</li>
+					<li>No refunds for weather-related cancellations</li>
+				</ul>
+
+				<h2>Force Majeure</h2>
+				<ul>
+					<li>The Party Spot is not responsible for cancellations due to acts of nature, government restrictions, or other uncontrollable circumstances</li>
+					<li>We will work with you to reschedule when possible</li>
+				</ul>
+
+				<h2>Contact Us</h2>
+				<p>For cancellation requests or questions, please contact us at <a href="tel:(609) 789-8422" class="text-brand-teal hover:text-brand-pink">(609) 789-8422</a> or email us.</p>
+
+				<p class="text-slate-300 italic mt-8"><em>This policy ensures fairness for all our clients and allows us to maintain our high-quality service standards.</em></p>
+			</div>
+		</main>
+
+		<footer class="border-t border-white/10 bg-slate-950/80 py-10 mt-16">
+			<div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+				<div>
+					<p>© {currentYear} The Party Spot. All rights reserved.</p>
+					<p class="mt-1">340 Hamilton Ave, Trenton, NJ 08611</p>
+				</div>
+				<nav class="flex flex-wrap items-center gap-4">
+					<a class="hover:text-white" href="/">Home</a>
+					<a class="hover:text-white" href="/policies/privacy">Privacy Policy</a>
+					<a class="hover:text-white" href="/policies/terms">Terms of Service</a>
+				</nav>
+			</div>
+		</footer>
+	</body>
+</html>
