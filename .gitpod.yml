@@ -1,0 +1,10 @@
+# Gitpod configuration for ThePartySpot monorepo
+image: gitpod/workspace-full
+
+tasks:
+  - init: pnpm install
+    command: pnpm dev
+
+ports:
+  - port: 4173
+    onOpen: open-preview
